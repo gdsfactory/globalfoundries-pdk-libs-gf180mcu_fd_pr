@@ -33,6 +33,9 @@ limitations under the License.
 
 import sys
 import os
+import pip
+
+pip.main(['install', 'gdsfactory', '--upgrade'])
 
 technology_macros_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, technology_macros_path)
@@ -41,6 +44,7 @@ from cells import gf180mcu
 
 # Instantiate and register the library
 gf180mcu()
+
 
 print("## gf180mcu PDK Pcells loaded.")
 print(sys.path)

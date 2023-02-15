@@ -2,7 +2,7 @@
 <klayout-macro>
  <description>Run Klayout DRC</description>
  <version>0.1</version>
- <category>drc</category>
+ <category>pymacros</category>
  <prolog/>
  <epilog/>
  <doc/>
@@ -28,8 +28,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-
 # %include ../drc/gf180mcu.drc
+
+import os
+from datetime import datetime
+from run_drc import main
+
+drc_run_dir = os.path.join(os.path.abspath(os.getcwd()), now_str)
+now_str = datetime.utcnow().strftime("drc_run_%Y_%m_%d_%H_%M_%S")
+main(drc_run_dir, now_str, arguments)
+
 </text>
 </klayout-macro>

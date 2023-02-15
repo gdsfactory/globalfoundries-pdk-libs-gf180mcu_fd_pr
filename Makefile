@@ -62,3 +62,5 @@ release:
 	git push origin --tags
 
 
+link:
+	ln -sf ${PWD}/klayout ${HOME}/.klayout/salt/gf180mcu
