@@ -56,3 +56,9 @@ test-LVS-switch: | $(CONDA_ENV_PYTHON)
 # ngspice models regression
 test-ngspice-%: | $(CONDA_ENV_PYTHON)
 	@$(IN_CONDA_ENV) cd models/ngspice/testing/regression/$*/ && python3 models_regression.py
+
+release:
+	git push
+	git push origin --tags
+
+
